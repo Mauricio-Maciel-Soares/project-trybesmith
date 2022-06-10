@@ -7,11 +7,7 @@ const getAll = async () => {
   return products;
 };
 
-const create = async (product: Product) => {
-  const newProduct = await model.create(product);
-
-  return newProduct;
-};
+const create = async (product: Product) => model.create(product);
 
 export default {
   getAll,
