@@ -15,7 +15,7 @@ const create = async (req: Request, res: Response) => {
   const product = req.body;
 
   const productCreated = await service.create(product);
-  return res.status(200).json(productCreated);
+  return res.status(201).json(productCreated);
 };
 
 export default {

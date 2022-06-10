@@ -5,7 +5,7 @@ import Product from '../interfaces/product.interface';
 const getAll = async () => {
   const QUERY_GET_ALL = 'SELECT * FROM Trybesmith.Products';
 
-  const [products] = await connection.execute(QUERY_GET_ALL);
+  const [products] = await connection.execute(QUERY_GET_ALL); // [] = a primeira posição
 
   return products as Product[];
 };

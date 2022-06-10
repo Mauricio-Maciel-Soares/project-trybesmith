@@ -1,11 +1,7 @@
 import model from '../models/products';
 import Product from '../interfaces/product.interface';
 
-const getAll = async () => {
-  const products = await model.getAll();
-
-  return products;
-};
+const getAll = async () => model.getAll();
 
 const create = async (product: Product) => model.create(product);
 
