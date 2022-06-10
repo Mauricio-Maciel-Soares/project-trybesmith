@@ -4,7 +4,7 @@ import User from '../interfaces/user.interface';
 
 const create = async (user: User) => {
   const { username, classe, level, password } = user;
-  const QUERY_CREATE = `INSERT INTO Trybesmith.Products
+  const QUERY_CREATE = `INSERT INTO Trybesmith.Users
     (username, classe, level, password) VALUES (?, ?, ?, ?)`;
   
   const newProduct = await connection

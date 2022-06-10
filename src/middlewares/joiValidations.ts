@@ -6,6 +6,13 @@ const nameAmountSchema = joi.object({
   amount: joi.string().min(3).required(),
 });
 
+const userValidationSchema = joi.object({
+  username: joi.string().min(3).required(),
+  classe: joi.string().min(3).required(),
+  level: joi.number().integer().min(1).required(),
+  password: joi.string().min(8).required(),
+});
+
 const isValidCreateProduct = (req: Request, _res: Response, next: NextFunction) => {
   const { name, amount } = req.body;
 
@@ -21,6 +28,22 @@ const isValidCreateProduct = (req: Request, _res: Response, next: NextFunction) 
   next();
 };
 
+const isValidCreateUser = (req: Request, _res: Response, next: NextFunction) => {
+  const { username, classe, level, password } = req.body;
+
+  const { error } = userValidationSchema.validate({ username, classe, level, password });
+
+  if (error) {
+    if (error.message.includes('required')) {
+      return next({ status: 400, message: error.message });
+    }
+    return next({ status: 422, message: error.message });
+  }
+
+  next();
+};
+
 export default {
   isValidCreateProduct,
+  isValidCreateUser,
 };
