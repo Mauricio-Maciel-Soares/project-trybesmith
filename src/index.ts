@@ -1,4 +1,3 @@
-// Let's go!
 import app from './app'; 
 
 const PORT = 3000;
@@ -8,3 +7,4 @@ const server = app.listen(PORT, () => console.log(
 ));
 
 export default server;
+// este arquivo é a representação do server
