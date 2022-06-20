@@ -1,11 +1,16 @@
-import Order from '../interfaces/order.interface';
+// import Order from '../interfaces/order.interface';
 import model from '../models/orders';
+// import products from '../models/products';
 
-const getAll = async (order:Order) => {
-  const { id, userId, productId } = order;
-
+const getAll = async () => {
   const orders = await model.getAll();
-  const result = orders.map(() => ({ id, userId, productId }));
+
+  const result = orders.map((e) => (
+    { id: e.id,
+      userId: e.userId,
+      productsIds: [e.productsIds] }
+  ));
+  
   return result;
 };
 

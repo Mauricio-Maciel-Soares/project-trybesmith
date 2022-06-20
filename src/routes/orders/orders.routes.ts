@@ -4,6 +4,6 @@ import controller from '../../controllers/orders';
 
 const ordersRouter = Router();
 
-ordersRouter.get('/:id', controller.getAll);
+ordersRouter.get('/', controller.getAll);
 
 export default ordersRouter;
