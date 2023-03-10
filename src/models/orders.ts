@@ -1,5 +1,4 @@
 // import { RowDataPacket } from 'mysql2';
-// import Order from '../interfaces/order.interface';
 import Order from '../interfaces/order.interface';
 import connection from './connection';
 
